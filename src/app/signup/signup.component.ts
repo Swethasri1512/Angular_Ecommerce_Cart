@@ -37,13 +37,10 @@ export class SignupComponent implements OnInit {
         console.log(response);
         alert("Congratlatulations, you have registered successfully!");
         this.router.navigate(['/'])
-      }).catch((error:any)=>{
-        console.log(error);
-      })
+      }).catch(()=>{})
     }
     else{
       this.mismatchpassworderror="password did not match"
     }
-  console.log(record)
   }
 }

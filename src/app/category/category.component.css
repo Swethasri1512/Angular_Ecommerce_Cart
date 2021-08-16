@@ -11,6 +11,7 @@ a.category-link{
   font-family:'Courier New', Courier, monospace;
   font-weight: bold;
   font-size:20px;
+  font: normal normal bold 20px/47px Helvetica Neue;
 }
 a.category-link:hover{
   color: red;

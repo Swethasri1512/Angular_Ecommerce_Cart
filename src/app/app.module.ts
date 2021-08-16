@@ -36,6 +36,8 @@ import { SignoutComponent } from './signout/signout.component';
 import { SshopGuard } from './sshop.guard';
 import { AuthService } from './database/auth.service';
 import { AlldataService } from './database/alldata.service';
+import { EdituserdetailComponent } from './edituserdetail/edituserdetail.component';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { AlldataService } from './database/alldata.service';
     MywishlistComponent,
     CartComponent,
     SignoutComponent,
+    EdituserdetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,7 @@ import { AlldataService } from './database/alldata.service';
     SshopGuard,
     AuthService,
     AlldataService,
+    
   ],
 
   bootstrap: [AppComponent]

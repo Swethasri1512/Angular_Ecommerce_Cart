@@ -8,6 +8,8 @@ import { SignoutComponent } from './signout/signout.component';
 import { MyaccountComponent } from './myaccount/myaccount.component';
 import { MywishlistComponent } from './mywishlist/mywishlist.component';
 import { SshopGuard } from './sshop.guard';
+import { CartComponent } from './cart/cart.component';
+import { EdituserdetailComponent } from './edituserdetail/edituserdetail.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path:"signuppage", component: SignupComponent},
   {path:"signinpage", component: LoginComponent},
   {path:"signoutpage", component: SignoutComponent},
+  {path:"updateinfopage/:id/:editoraddress", component: EdituserdetailComponent},
+  {path:"cartpage", component: CartComponent},
   {path:"**", redirectTo:"homepage", pathMatch:"full"}
 ];
 

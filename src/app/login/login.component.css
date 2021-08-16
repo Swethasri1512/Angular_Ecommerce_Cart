@@ -6,3 +6,11 @@
   width:160px;
   color: #339BF7;
 }
+
+.login-title{
+  font: normal normal bold 30px/47px Helvetica Neue;
+}
+
+label{
+  font: normal normal normal 17px/21px Fira Sans;
+}

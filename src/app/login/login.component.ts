@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AlldataService } from '../database/alldata.service';
 import { windowToggle } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -41,6 +42,10 @@ export class LoginComponent implements OnInit {
           Fullname: e.payload.doc.data()['fullname'],
           Email: e.payload.doc.data()['email'],
           Password: e.payload.doc.data()['password'],
+          Phone: e.payload.doc.data()['phone'],
+          State: e.payload.doc.data()['state'],
+          Country: e.payload.doc.data()['country'],
+          Address: e.payload.doc.data()['address'],
         }
       })
     })
@@ -54,13 +59,22 @@ export class LoginComponent implements OnInit {
     for(let i=0; i<arr.length; i++){
   
       // used in this function only for verifying user.
-      let loginid=arr[i].Email
+      let id=arr[i].Id
+      let fullname=arr[i].Fullname
+      let loginemailid=arr[i].Email
       let loginpassword=arr[i].Password
 
-      if((this.username==loginid) && (this.password==loginpassword) && ((this.username!="") || (this.password!="")) ){
-        this.authService.login(loginid,loginpassword).subscribe((data:any)=>{
+      let phone=arr[i].Phone
+      let state=arr[i].State
+      let country=arr[i].Country
+      let address=arr[i].Address
+
+      if((this.username==loginemailid) && (this.password==loginpassword) && ((this.username!="") || (this.password!="")) ){
+        this.authService.login(loginemailid, loginpassword, id, fullname).subscribe((data:any)=>{
           window.location.reload()
-          if(data) {this.router.navigate(['/'])}
+          if(data) {
+            this.router.navigate(['myaccount/'])
+          }
         })
         // this will run if user enters correct data
         loggedin_successfully_or_not=true;
